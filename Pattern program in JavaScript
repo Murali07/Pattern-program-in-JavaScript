@@ -1,0 +1,84 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    
+    let length = parseInt(userInput[0]);
+    
+    res = "";
+    
+    //Left triangle pattern
+    
+    for(let i=0; i<length; i++){
+        
+        for(let j=0; j<=i; j++){
+            
+            if(j == 0){
+                
+                res = res + "*";
+            }
+            else{
+                
+                res = res + " " + "*";
+            }
+            
+            
+        }
+        
+        if(i == length - 1){
+            
+            res = res;
+        }
+        else{
+            
+            res = res + '\n';
+        }
+        
+        
+    }
+    
+    //Downward triangle pattern
+    
+    // for(let i=0; i<length; i++){
+        
+    //     for(let j=0; j<length-i; j++){
+            
+    //         if(j == 0){
+                
+    //             res = res + "*";
+    //         }
+    //         else{
+                
+    //             res = res + " " + "*";
+    //         }
+            
+            
+    //     }
+        
+    //     if(i == length - 1){
+            
+    //         res = res;
+    //     }
+    //     else{
+            
+    //         res = res + '\n';
+    //     }
+        
+        
+    // }
+    
+    console.log(res);
+    
+  
+  
+});
